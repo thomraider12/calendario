@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: Arima;
+    color: #333;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.day {
+    border: 1px solid #ddd;
+    font-family: Ubuntu;
+    padding: 10px;
+    min-height: 80px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.event {
+    background-color: #1e88e5;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-family: Ubuntu;
+    position: relative; /* Permite que o botão de remover seja posicionado dentro do evento */
+}
+
+.remove-btn {
+    background-color: red; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px; /* Tamanho do botão */
+    font-size: 0.9em; 
+    position: absolute; /* Permite posicionar o botão */
+    right: 5px; /* Distância da borda direita */
+    top: 5px; /* Distância da borda superior */
+    float: right; /* Garante que fique à direita do evento */
+}
+
+
+.event-list-item {
+    position: relative; /* Contêiner para o botão de remover */
+    font-family: Agdasima;
+    font-size: larger;
+}
+
+.event-form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+input[type="date"],
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155a8a;
+}
+
+#eventList {
+    margin-top: 20px;
+    font-family: Agdasima;
+    font-size: larger;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.day-name {
+    text-align: center;
+    font-family: Ubuntu;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #555;
+}
+
+footer {
+    font-family: "Ubuntu", sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ddd;
+    z-index: 1000; 
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .day {
+        min-height: 60px; /* Altura menor em dispositivos pequenos */
+    }
+}
+
+@media (max-width: 400px) {
+    .day {
+        min-height: 50px; /* Altura ainda menor em dispositivos muito pequenos */
+    }
+}
